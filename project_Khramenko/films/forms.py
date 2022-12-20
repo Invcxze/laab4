@@ -1,5 +1,4 @@
 from django import forms
-
 class FilmsForms(forms.Form):
     title = forms.CharField(max_length=50, widget=forms.TextInput(attrs={"name":'title'}))
     actors = forms.CharField(widget=forms.Textarea(attrs={"name":'actors'}))
