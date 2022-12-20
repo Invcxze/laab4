@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
     operations = [
         migrations.AlterField(
             model_name='films',
-            name='Date_showed',
+            name='date_showed',
             field=models.CharField(max_length=50),
         ),
     ]

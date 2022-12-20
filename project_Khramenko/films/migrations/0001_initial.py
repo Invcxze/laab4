@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=50)),
                 ('actors', models.TextField()),
                 ('Date_is_published', models.DateField(auto_now_add=True)),
-                ('Date_showed', models.DateField()),
+                ('date_showed', models.DateField()),
                 ('category', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='films.category')),
             ],
         ),
