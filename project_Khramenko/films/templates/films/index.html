@@ -1,0 +1,23 @@
+{% extends "films\base.html" %}
+{% block title %}Новости{% endblock %}
+{% block content %}
+
+<h2>Афиша Кинотеатра KiN</h2>
+
+{% for i in films %}
+    <br>
+    <p>{{ i.id }}</p>
+    <p>{{ i.title }}</p>
+    <p>{{ i.category_id }}</p>
+    <p>{{i.actors}}</p>
+    <p>{{i.Date_is_published}}</p>
+    {%if user.is_authenticated %}
+        <a href="/delete/{{i.id}}"><button>Удалить</button></a>
+        <a href="/edit/{{i.id}}"><button>Изменить</button></a>
+        <a href="/add/"><button>Добавить</button></a>
+    {%endif%}
+{% endfor %}
+{%if user.is_authenticated %}
+    <a href="{% url 'logout' %}" class="LogOut__btn"><button>LogOut</button></a>
+{%endif%}
+{% endblock %}

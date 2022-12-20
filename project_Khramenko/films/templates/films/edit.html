@@ -1,0 +1,13 @@
+{% extends "films\base.html" %}
+{% block title %}Изменить{% endblock %}
+{% block content %}
+{%if user.is_authenticated %}
+<form action="" method="post">
+    {%csrf_token%}
+    {{form}}
+    <button type="submit">send</button>
+</form>
+{%else%}
+<h2>Войдите в аккаунт</h2>
+{%endif%}
+{% endblock %}
